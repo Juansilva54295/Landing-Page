@@ -18,8 +18,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuButtons = document.querySelectorAll('.menu-button');
     menuButtons.forEach(button => {
         button.addEventListener('click', function() {
+            hamburger.classList.remove('active');
             mainNav.classList.remove('active');
             document.body.style.overflow = '';
+        });
+    });
+
+    // ===== SCROLL SUAVE PARA LINKS INTERNOS =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Fecha o menu mobile se estiver aberto
+                if (hamburger.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+                
+                // Scroll suave até o elemento
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
 
