@@ -83,4 +83,88 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.plusSlides = plusSlides;
     window.currentSlide = currentSlide;
+
+    // ===== ANIMAÇÃO DAS IMAGENS DOS PRODUTOS =====
+    const productCards = document.querySelectorAll('.product-card');
+    
+    productCards.forEach((card, index) => {
+        const img = card.querySelector('.product-image');
+        
+        if (img) {
+            // Animação quando a página carrega (com delay progressivo)
+            setTimeout(() => {
+                img.classList.add('rotate-scale-down-diag-1');
+                
+                img.addEventListener('animationend', function() {
+                    img.classList.remove('rotate-scale-down-diag-1');
+                });
+            }, index * 300);
+            
+            // Animação ao passar o mouse
+            card.addEventListener('mouseenter', function() {
+                img.classList.add('rotate-scale-down-diag-1');
+                
+                img.addEventListener('animationend', function() {
+                    img.classList.remove('rotate-scale-down-diag-1');
+                });
+            });
+        }
+    });
+
+    // ===== FAQ ACCORDION =====
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        
+        question.addEventListener('click', () => {
+            // Fecha todos os outros itens
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Abre/fecha o item clicado
+            item.classList.toggle('active');
+            
+            // Fecha se estiver aberto e for clicado novamente
+            if (!item.classList.contains('active')) {
+                item.classList.remove('active');
+            }
+        });
+    });
+    // Formulário de Contato
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Simulação de envio
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    
+    alert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso.\nEntraremos em contato pelo e-mail: ${email}`);
+    
+    // Limpa o formulário
+    this.reset();
+});
+
+    // ===== ANIMAÇÃO DOS MODELOS 3D =====
+    const modelViewers = document.querySelectorAll('model-viewer');
+    
+    modelViewers.forEach((viewer, index) => {
+        // Animação ao carregar
+        setTimeout(() => {
+            viewer.setAttribute('auto-rotate', 'true');
+        }, index * 500);
+        
+        // Interação ao passar o mouse
+        viewer.parentElement.addEventListener('mouseenter', () => {
+            viewer.setAttribute('auto-rotate', 'false');
+            viewer.setAttribute('camera-orbit', '45deg 55deg 2m');
+        });
+        
+        viewer.parentElement.addEventListener('mouseleave', () => {
+            viewer.setAttribute('auto-rotate', 'true');
+        });
+    });
 });
