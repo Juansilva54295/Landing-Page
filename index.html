@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TermoVita - Garrafas Térmicas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Roboto:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">TermoVita</div>
+        <button class="hamburger" aria-label="Menu">
+            <span class="hamburger-icon"><i class="fas fa-bars"></i></span>
+            <span class="close-icon"><i class="fas fa-times"></i></span>
+        </button>
+        <nav class="main-nav">
+            <a href="#" class="menu-button">CONTATO</a>
+            <a href="#" class="menu-button">PRODUTOS</a>
+            <a href="#" class="menu-button">SOBRE NÓS</a>
+            <a href="#" class="menu-button">FAQ</a>
+            <a href="#" class="menu-button">AJUDA</a>
+            <a href="#" class="menu-button">REDESOCIAL</a>
+        </nav>
+    </header>
+    
+    
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="slides-container">
+            <div class="slideshow">
+                <div class="slide fade">
+                    <img src="img/image1.png" alt="Garrafa Térmica TermoVita">
+                </div>
+                <div class="slide fade">
+                    <img src="img/image2.png" alt="Linha de Produtos TermoVita">
+                </div>
+                <div class="slide fade">
+                    <img src="img/image3.png" alt="Garrafa Térmica em Uso">
+                </div>
+
+            </div>
+            
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+        
+        <div class="presentation">
+            <h1>TermoVita – Excelência em Conservação Térmica</h1>
+            
+            <h2>História da Empresa</h2>
+            
+            <p>Fundada em 2010, a TermoVita nasceu da necessidade de oferecer soluções práticas e eficientes para a conservação de temperaturas de bebidas no cotidiano. Tudo começou quando nosso fundador, um entusiasta de atividades ao ar livre, percebeu a dificuldade em manter suas bebidas na temperatura ideal durante longas caminhadas e viagens.</p>
+            
+            <p>Com uma visão clara de inovação e qualidade, a TermoVita investiu em pesquisa e desenvolvimento para criar garrafas térmicas que combinassem alta performance, durabilidade e design funcional.</p>
+            
+            <p class="slogan">TermoVita – Preservando temperaturas, conectando momentos.</p>
+        </div>
+    </main>
+    
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2023 TermoVita. Todos os direitos reservados</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
