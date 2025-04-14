@@ -12,25 +12,35 @@
               transform: scale(1) rotate3d(1, 1, 0, -360deg);
     }
   }
-  
   @keyframes rotate-scale-down-diag-1 {
     0% {
-      -webkit-transform: scale(1) rotate3d(1, 1, 0, 0deg);
-              transform: scale(1) rotate3d(1, 1, 0, 0deg);
+      transform: scale(1) rotate3d(1, 1, 0, 0deg);
     }
     50% {
-      -webkit-transform: scale(0.5) rotate3d(1, 1, 0, -180deg);
-              transform: scale(0.5) rotate3d(1, 1, 0, -180deg);
+      transform: scale(0.5) rotate3d(1, 1, 0, -180deg);
     }
     100% {
-      -webkit-transform: scale(1) rotate3d(1, 1, 0, -360deg);
-              transform: scale(1) rotate3d(1, 1, 0, -360deg);
+      transform: scale(1) rotate3d(1, 1, 0, -360deg);
     }
   }
   
-  .rotate-scale-down-diag-1 {
-    -webkit-animation: rotate-scale-down-diag-1 0.7s linear both;
-            animation: rotate-scale-down-diag-1 0.7s linear both;
+  .product-image-container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden; /* Para garantir que a animação não saia da área visível */
+  }
+  
+  .product-card:hover .product-image {
+    transform: scale(1.1);
+    animation: rotate-scale-down-diag-1 0.7s linear both;
+  }
+  
+  .product-card:hover .product-image-container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.3) 100%);
   }
 
 
